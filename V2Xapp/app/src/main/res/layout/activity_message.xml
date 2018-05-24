@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.message.MessageActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimens38"
+        android:background="@color/common_black_alpha_cc">
+
+        <ImageView
+            android:layout_width="@dimen/dimens60"
+            android:layout_height="match_parent"
+            android:onClick="setBack"
+            android:padding="@dimen/dimens7"
+            android:src="@drawable/back_drawable"
+            android:background="@drawable/back_background"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimens38"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="消息"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimens18" />
+
+    </RelativeLayout>
+
+    <com.androidkun.PullToRefreshRecyclerView
+        android:id="@+id/message_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.androidkun.PullToRefreshRecyclerView>
+
+</LinearLayout>

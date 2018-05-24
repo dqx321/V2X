@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimens35"
+        android:background="@drawable/shape_baikuang"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/common_text"
+        android:textSize="14sp" />
+
+</FrameLayout>

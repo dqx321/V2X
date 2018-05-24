@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <!--<dbname>是数据库的名字-->
+    <!--<version>是数据库的版本号-->
+    <!--<list>是数据库的映射模型（数据库表）-->
+    <!--<mapping>是数据库的映射模型的地址（数据库表结构）-->
+    <dbname value="Intelligentsqlit" ></dbname>
+    <version value="2" ></version>
+    <list>
+        <mapping class="com.intelligent.v2xapp.activity.message.MessageDb"></mapping>
+    </list>
+
+</litepal>

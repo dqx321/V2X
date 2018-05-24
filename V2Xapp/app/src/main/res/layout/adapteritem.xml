@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bluekuang1"
+    tools:context="com.intelligent.v2xapp.html5.WebActivity">
+
+    <ImageView
+        android:id="@+id/warning_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:src="@drawable/headway_monitor" />
+
+    <TextView
+        android:id="@+id/describ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="绿波车速："
+        android:visibility="gone"
+        android:textColor="@color/chartreuse"
+        android:textSize="@dimen/dimens23" />
+</RelativeLayout>
