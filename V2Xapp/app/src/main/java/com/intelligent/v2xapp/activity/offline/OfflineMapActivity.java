@@ -1,18 +1,11 @@
 package com.intelligent.v2xapp.activity.offline;
 
-import android.content.Context;
-import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.AppBarLayout;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AbsListView;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -25,11 +18,9 @@ import com.baidu.mapapi.map.offline.MKOfflineMapListener;
 import com.intelligent.v2xapp.R;
 import com.intelligent.v2xapp.activity.base.BaseActivity;
 import com.intelligent.v2xapp.activity.offline.adapter.CityListAdapter;
-import com.intelligent.v2xapp.activity.offline.entity.City;
-import com.intelligent.v2xapp.activity.offline.utils.AscllUtil;
-import com.intelligent.v2xapp.activity.offline.utils.DensityUtil;
-import com.intelligent.v2xapp.activity.offline.utils.PingYinUtil;
-import com.intelligent.v2xapp.activity.offline.view.LetterListView;
+import com.intelligent.v2xapp.activity.offline.bean.City;
+import com.intelligent.v2xapp.util.AscllUtil;
+import com.intelligent.v2xapp.review.LetterListView;
 import com.vise.common_base.utils.ToastUtil;
 import com.vise.common_utils.log.LogUtils;
 

@@ -1,12 +1,14 @@
-package com.intelligent.v2xapp.activity.message
+package com.intelligent.v2xapp.activity.base
 
 import android.widget.TextView
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 
-
-// Created by CIDI daiqinxue on 2018/5/21.
+/**
+ * recycleview的baseholder
+ * Created by CIDI daiqinxue on 2018/5/21
+ */
 class BaseHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     //不写死控件变量，而采用Map方式
     private val mViews = HashMap<Int, View>()

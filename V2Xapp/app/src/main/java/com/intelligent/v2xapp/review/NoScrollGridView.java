@@ -1,4 +1,4 @@
-package com.intelligent.v2xapp.activity.offline.view;
+package com.intelligent.v2xapp.review;
 
 import android.util.AttributeSet;
 import android.widget.GridView;

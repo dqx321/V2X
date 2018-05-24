@@ -1,4 +1,4 @@
-package com.intelligent.v2xapp.activity.offline.entity;
+package com.intelligent.v2xapp.activity.offline.bean;
 
 import com.baidu.mapapi.map.offline.MKOLSearchRecord;
 

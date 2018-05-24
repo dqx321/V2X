@@ -17,7 +17,7 @@
         android:textColor="@color/common_text"
         android:textSize="14sp" />
 
-    <com.intelligent.v2xapp.activity.offline.view.NoScrollGridView
+    <com.intelligent.v2xapp.review.NoScrollGridView
         android:id="@+id/grid_city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,12 +1,13 @@
-package com.intelligent.v2xapp.activity.message
+package com.intelligent.v2xapp.activity.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.support.v7.widget.RecyclerView
 
+/**
+ * Created by CIDI daiqinxue on 2018/5/21.
+ */
 
-
-// Created by CIDI daiqinxue on 2018/5/21.
 open class BaseRecycleAdapter<T>( val layoutId: Int,val list: List<T>) : RecyclerView.Adapter<BaseHolder>() {
 
 

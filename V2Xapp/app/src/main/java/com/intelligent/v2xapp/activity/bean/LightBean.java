@@ -1,8 +1,9 @@
-package com.intelligent.v2xapp.activity.main;
+package com.intelligent.v2xapp.activity.bean;
 
 import java.io.Serializable;
 
 // Created by CIDI daiqinxue on 2018/4/21.
+//红绿灯bean
 public class LightBean implements Serializable{
     private String carid;
     private String style;

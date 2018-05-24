@@ -33,26 +33,13 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="mZq5TwVNzmCFO6fW3KXtFfvrYMgVLH57" />
 
-        <activity android:name=".activity.MapAcitivity" />
-        <activity android:name=".activity.AboutActivity" />
         <activity android:name=".html5.WebActivity" />
-        <activity
-            android:name=".activity.HomeActivity"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.V2XMainActivity" android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-                <!-- <action android:name="android.intent.action.VIEW" /> -->
-                <!-- <category android:name="android.intent.category.DEFAULT" /> -->
-                <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
-                <!-- <data -->
-                <!-- android:host="myhost" -->
-                <!-- android:path="/main" -->
-                <!-- android:port="1024" -->
-                <!-- android:scheme="myscheme" /> -->
+
             </intent-filter>
         </activity>
         <activity android:name=".activity.offline.OfflineMapActivity" android:launchMode="singleInstance" />

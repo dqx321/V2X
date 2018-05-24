@@ -1,4 +1,4 @@
-package com.intelligent.v2xapp.activity;
+package com.intelligent.v2xapp.activity.bean;
 
 // Created by CIDI daiqinxue on 2018/4/23.
 public class WarnBean {

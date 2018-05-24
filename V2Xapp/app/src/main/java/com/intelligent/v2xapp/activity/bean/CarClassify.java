@@ -1,8 +1,12 @@
-package com.intelligent.v2xapp.activity.main;
+package com.intelligent.v2xapp.activity.bean;
 
 import com.baidu.mapapi.map.Marker;
 
+/**
+ * 车辆地图标记信息
+ */
 // Created by CIDI daiqinxue on 2018/4/23.
+
 public class CarClassify {
 
     private String Id;

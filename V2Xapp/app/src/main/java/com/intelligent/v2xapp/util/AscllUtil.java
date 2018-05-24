@@ -1,4 +1,4 @@
-package com.intelligent.v2xapp.activity.offline.utils;
+package com.intelligent.v2xapp.util;
 
 // Created by CIDI daiqinxue on 2018/5/21.
 public class AscllUtil {

@@ -6,12 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.intelligent.v2xapp.R;
-import com.intelligent.v2xapp.activity.offline.ClicCity;
 import com.intelligent.v2xapp.activity.offline.HotInterface;
-import com.intelligent.v2xapp.activity.offline.entity.City;
+import com.intelligent.v2xapp.activity.offline.bean.City;
 
 import java.util.ArrayList;
 import java.util.List;

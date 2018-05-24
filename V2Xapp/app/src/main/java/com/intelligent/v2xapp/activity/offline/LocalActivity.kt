@@ -2,19 +2,14 @@ package com.intelligent.v2xapp.activity.offline
 
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.AdapterView
 import com.baidu.mapapi.map.offline.*
 import com.intelligent.v2xapp.R
 import com.intelligent.v2xapp.activity.base.BaseActivity
-import com.intelligent.v2xapp.activity.offline.adapter.CityListAdapter
 import com.intelligent.v2xapp.activity.offline.adapter.LocationCityAdapter
-import com.intelligent.v2xapp.activity.offline.adapter.RecentCityAdapter
-import com.intelligent.v2xapp.activity.offline.entity.City
 import com.vise.common_base.utils.ToastUtil
 import com.vise.common_utils.log.LogUtils
 import kotlinx.android.synthetic.main.activity_local.*
-import kotlinx.android.synthetic.main.v_toolbar_with_back.*
 import java.util.ArrayList
 
 class LocalActivity : BaseActivity(), MKOfflineMapListener {

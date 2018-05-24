@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.baidu.mapapi.map.offline.MKOLUpdateElement;
 import com.intelligent.v2xapp.R;
-import com.intelligent.v2xapp.activity.offline.entity.City;
 
 import java.util.List;
 

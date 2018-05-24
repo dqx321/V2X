@@ -1,7 +1,8 @@
 package com.intelligent.v2xapp.activity.message
 
-import android.util.TimeUtils
 import com.intelligent.v2xapp.R
+import com.intelligent.v2xapp.activity.base.BaseHolder
+import com.intelligent.v2xapp.activity.base.BaseRecycleAdapter
 import com.intelligent.v2xapp.util.DataUtil
 
 /**

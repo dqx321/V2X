@@ -1,4 +1,4 @@
-package com.intelligent.v2xapp.activity.offline.utils;
+package com.intelligent.v2xapp.util;
 
 import com.vise.common_utils.log.LogUtils;
 

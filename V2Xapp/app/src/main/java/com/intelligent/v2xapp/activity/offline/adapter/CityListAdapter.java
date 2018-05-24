@@ -1,22 +1,17 @@
 package com.intelligent.v2xapp.activity.offline.adapter;
 
 import android.content.Context;
-import android.location.Location;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.baidu.mapapi.map.offline.MKOLSearchRecord;
-import com.baidu.mapapi.map.offline.MKOLUpdateElement;
 import com.intelligent.v2xapp.R;
 import com.intelligent.v2xapp.activity.offline.ClicCity;
 import com.intelligent.v2xapp.activity.offline.HotInterface;
-import com.intelligent.v2xapp.activity.offline.entity.City;
+import com.intelligent.v2xapp.activity.offline.bean.City;
 
 import java.util.List;
 import java.util.Map;

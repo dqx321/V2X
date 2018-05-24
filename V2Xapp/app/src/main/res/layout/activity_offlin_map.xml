@@ -43,7 +43,7 @@
         android:listSelector="@android:color/transparent"
         android:scrollbars="none" />
 
-    <com.intelligent.v2xapp.activity.offline.view.LetterListView
+    <com.intelligent.v2xapp.review.LetterListView
         android:id="@+id/letter_container"
         android:layout_width="22dp"
         android:layout_height="match_parent"

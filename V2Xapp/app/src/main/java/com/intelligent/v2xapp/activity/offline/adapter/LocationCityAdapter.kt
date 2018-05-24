@@ -5,13 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.Button
 import android.widget.TextView
 import com.baidu.mapapi.map.offline.MKOLUpdateElement
 import com.intelligent.v2xapp.R
-import com.intelligent.v2xapp.R.id.city
-import com.intelligent.v2xapp.activity.offline.entity.City
-import com.vise.common_utils.log.LogUtils
 
 // Created by CIDI daiqinxue on 2018/5/18.
 

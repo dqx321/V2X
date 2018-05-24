@@ -1,4 +1,4 @@
-package com.intelligent.v2xapp.activity.offline.view;
+package com.intelligent.v2xapp.review;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.intelligent.v2xapp.activity.offline.utils.DensityUtil;
+import com.intelligent.v2xapp.util.DensityUtil;
 
 
 /**

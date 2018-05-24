@@ -9,12 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.bumptech.glide.Glide;
 import com.intelligent.v2xapp.R;
-import com.vise.common_utils.log.LogUtils;
+import com.intelligent.v2xapp.activity.bean.WarnBean;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**

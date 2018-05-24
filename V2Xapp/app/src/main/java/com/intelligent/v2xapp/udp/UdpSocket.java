@@ -3,12 +3,7 @@ package com.intelligent.v2xapp.udp;
 import android.os.Handler;
 import android.os.Message;
 
-import com.intelligent.v2xapp.activity.main.MainBean;
-import com.intelligent.v2xapp.activity.main.WarningBean;
-import com.intelligent.v2xapp.util.DataUtil;
 import com.intelligent.v2xapp.util.ExecutorUtil;
-import com.intelligent.v2xapp.util.TagUtils;
-import com.vise.common_utils.log.LogUtils;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

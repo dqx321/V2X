@@ -1,8 +1,9 @@
-package com.intelligent.v2xapp.activity.main;
+package com.intelligent.v2xapp.activity.bean;
 
 import java.io.Serializable;
 
 /**
+ * 车辆信息
  * Created by 长沙智能驾驶研究院cidi daiqinxue on 2018/3/29.
  */
 
