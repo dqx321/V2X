@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ZoomControls;
 
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
@@ -41,6 +42,7 @@ import com.intelligent.v2xapp.activity.message.MessageActivity;
 import com.intelligent.v2xapp.activity.message.MessageDb;
 import com.intelligent.v2xapp.activity.offline.OfflineMapActivity;
 import com.intelligent.v2xapp.activity.offline.SettingActivity;
+import com.intelligent.v2xapp.activity.warning.WarnSettingActivity;
 import com.intelligent.v2xapp.review.DashboardView;
 import com.intelligent.v2xapp.udp.UdpSocket;
 import com.intelligent.v2xapp.util.CheckUtils;
@@ -88,7 +90,7 @@ public class V2XMainActivity extends BaseActivity {
                 case 10:
                     String msg = msg1.obj.toString();
 
-                    if (msg.substring(0, 2).equals("01") && msg.length() >= 30) {
+                    if (msg.substring(0, 2).equals("01") && msg.length() >= 20) {
                         MainBean bean;
                         String carId = DataUtil.getInter(msg.substring(2, 10)) + "";
                         String latitu = DataUtil.getInter(msg.substring(10, 18)) * 0.0000001 + "";
@@ -96,6 +98,7 @@ public class V2XMainActivity extends BaseActivity {
                         String direction = DataUtil.getInter(msg.substring(26, 30)) + "";
                         String speed = DataUtil.getInter(msg.substring(30, 34)) + "";
                         bean = new MainBean(carId, latitu, longtitu, direction, speed);
+//                       LogUtils.e("vivi"+bean.toString());
                         setMainbean(bean);
                     } else if (msg.substring(0, 2).equals("02") && msg.length() >= 18) {
                         WarningBean warningBean;
@@ -158,10 +161,11 @@ public class V2XMainActivity extends BaseActivity {
                 openActivityNoIntent(SettingActivity.class);
                 break;
             case R.id.message_btn:
-                openActivityNoIntent(MessageActivity.class);
+//                openActivityNoIntent(MessageActivity.class);
 
                 break;
             case R.id.warning_btn:
+//                openActivityNoIntent(WarnSettingActivity.class);
                 break;
         }
     }
@@ -178,12 +182,12 @@ public class V2XMainActivity extends BaseActivity {
     }
 
     private void setMainbean(MainBean bean) {
-        if (bean.getCarId().equals("")) {
+//        if (bean.getSpeed().equals("")) {
             dashboardView.setVelocity(Integer.parseInt(bean.getSpeed()));
-        }
+//        }
         Random rand = new Random();
-        LatLng point = new LatLng(rand.nextInt(5), rand.nextInt(5));
-//        LatLng point = conver(new LatLng(Double.parseDouble(bean.getLatitu()), Double.parseDouble(bean.getLongtitu())));
+//        LatLng point = new LatLng(rand.nextInt(5), rand.nextInt(5));
+        LatLng point = conver(new LatLng(Double.parseDouble(bean.getLatitu()), Double.parseDouble(bean.getLongtitu())));
         long time = System.currentTimeMillis();
         Marker mMarker = getCarMarker(bean.getCarId());
         if (mMarker == null) {
@@ -374,6 +378,16 @@ public class V2XMainActivity extends BaseActivity {
         mBaiduMap.setTrafficEnabled(true);
         // 开启定位图层
         mBaiduMap.setMyLocationEnabled(true);
+        // 隐藏logo
+        View child = mapview1.getChildAt(1);
+        if (child != null && (child instanceof ImageView || child instanceof ZoomControls)) {
+            child.setVisibility(View.INVISIBLE);
+        }
+//地图上比例尺
+        mapview1.showScaleControl(false);
+// 隐藏缩放控件
+        mapview1.showZoomControls(false);
+       
     }
 
     private void initUdp(final String ip, final String message) {

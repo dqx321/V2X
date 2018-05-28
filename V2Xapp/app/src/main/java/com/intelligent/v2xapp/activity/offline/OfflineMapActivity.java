@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -19,8 +20,8 @@ import com.intelligent.v2xapp.R;
 import com.intelligent.v2xapp.activity.base.BaseActivity;
 import com.intelligent.v2xapp.activity.offline.adapter.CityListAdapter;
 import com.intelligent.v2xapp.activity.offline.bean.City;
-import com.intelligent.v2xapp.util.AscllUtil;
 import com.intelligent.v2xapp.review.LetterListView;
+import com.intelligent.v2xapp.util.AscllUtil;
 import com.vise.common_base.utils.ToastUtil;
 import com.vise.common_utils.log.LogUtils;
 
@@ -45,6 +46,8 @@ public class OfflineMapActivity extends BaseActivity implements LetterListView.O
     LetterListView letter_container;
     @BindView(R.id.localcity)
     Button localcity;
+    @BindView(R.id.top_centerText)
+    TextView topCenterText;
     private List<City> allCities = new ArrayList<>();
     private List<City> hotCities = new ArrayList<>();
     private List<City> localarrayList = new ArrayList<>();
@@ -74,14 +77,12 @@ public class OfflineMapActivity extends BaseActivity implements LetterListView.O
         startLocate();
     }
 
-    public void setBack(View view) {
-        finish();
-    }
 
     //离线地图
     private MKOfflineMap mkOfflineMap;
 
     private void getCityData() {
+        topCenterText.setText("离线地图");
         mkOfflineMap = new MKOfflineMap();
         mkOfflineMap.init(this);
 // 构造定位数据

@@ -34,18 +34,24 @@
             android:value="mZq5TwVNzmCFO6fW3KXtFfvrYMgVLH57" />
 
         <activity android:name=".html5.WebActivity" />
-        <activity android:name=".activity.V2XMainActivity" android:launchMode="singleTop">
+        <activity
+            android:name=".activity.V2XMainActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
-        <activity android:name=".activity.offline.OfflineMapActivity" android:launchMode="singleInstance" />
+        <activity
+            android:name=".activity.offline.OfflineMapActivity"
+            android:launchMode="singleInstance" />
         <activity android:name=".activity.offline.LocalActivity" />
         <activity android:name=".activity.message.MessageActivity" />
-        <activity android:name=".activity.offline.SettingActivity" android:launchMode="singleInstance" ></activity>
+        <activity
+            android:name=".activity.offline.SettingActivity"
+            android:launchMode="singleInstance" />
+        <activity android:name=".activity.warning.WarnSettingActivity"></activity>
     </application>
 
 </manifest>

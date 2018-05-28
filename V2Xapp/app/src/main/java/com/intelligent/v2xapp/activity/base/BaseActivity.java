@@ -51,7 +51,9 @@ public class BaseActivity extends Activity {
             checkPermissions(needPermissions);
         }
     }
-
+    public void setBack(View view) {
+        finish();
+    }
     /**
      * 需要进行检测的权限数组
      */

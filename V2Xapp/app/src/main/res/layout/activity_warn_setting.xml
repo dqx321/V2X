@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.message.MessageActivity">
+    tools:context=".activity.warning.WarnSettingActivity">
 
     <include layout="@layout/top_layout"></include>
 
-    <!--<com.androidkun.PullToRefreshRecyclerView-->
-        <!--android:id="@+id/message_recycle"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
 
-    <!--</com.androidkun.PullToRefreshRecyclerView>-->
+    <com.androidkun.PullToRefreshRecyclerView
+        android:id="@+id/warning_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+    </com.androidkun.PullToRefreshRecyclerView>
 </LinearLayout>

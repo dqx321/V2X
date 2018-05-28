@@ -1,22 +1,19 @@
 package com.intelligent.v2xapp.activity.offline;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.intelligent.v2xapp.R;
 import com.intelligent.v2xapp.activity.V2XMainActivity;
 import com.intelligent.v2xapp.activity.base.BaseActivity;
-import com.intelligent.v2xapp.udp.UdpSocket;
 import com.intelligent.v2xapp.udp.UdpSocket1;
 import com.vise.common_base.utils.ToastUtil;
-
-import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +30,10 @@ public class SettingActivity extends BaseActivity {
     @BindView(R.id.text_green)
     TextView textGreen;
     public static SettingActivity instance = null;
+    @BindView(R.id.top_centerText)
+    TextView topCenterText;
+    @BindView(R.id.right_btn)
+    TextView rightBtn;
     private UdpSocket1 udpSocket;
 
     @SuppressLint("HandlerLeak")
@@ -54,7 +55,13 @@ public class SettingActivity extends BaseActivity {
         setContentView(R.layout.activity_setting);
         instance = this;
         ButterKnife.bind(this);
+        initView();
 
+    }
+
+    private void initView() {
+        rightBtn.setVisibility(View.VISIBLE);
+        topCenterText.setText("设置");
     }
 
     private void sendUdp(final String ip, final String message, final int port) {

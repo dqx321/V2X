@@ -10,6 +10,7 @@ import com.intelligent.v2xapp.activity.offline.adapter.LocationCityAdapter
 import com.vise.common_base.utils.ToastUtil
 import com.vise.common_utils.log.LogUtils
 import kotlinx.android.synthetic.main.activity_local.*
+import kotlinx.android.synthetic.main.top_layout.*
 import java.util.ArrayList
 
 class LocalActivity : BaseActivity(), MKOfflineMapListener {
@@ -71,6 +72,7 @@ class LocalActivity : BaseActivity(), MKOfflineMapListener {
     }
 
     private fun initOfflineMap() {
+        top_centerText.text="已下载地图"
         mOffline = MKOfflineMap()
         mOffline!!.init(this)
 
