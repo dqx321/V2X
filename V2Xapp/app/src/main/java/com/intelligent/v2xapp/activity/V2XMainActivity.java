@@ -98,7 +98,6 @@ public class V2XMainActivity extends BaseActivity {
                         String direction = DataUtil.getInter(msg.substring(26, 30)) + "";
                         String speed = DataUtil.getInter(msg.substring(30, 34)) + "";
                         bean = new MainBean(carId, latitu, longtitu, direction, speed);
-//                       LogUtils.e("vivi"+bean.toString());
                         setMainbean(bean);
                     } else if (msg.substring(0, 2).equals("02") && msg.length() >= 18) {
                         WarningBean warningBean;
