@@ -73,7 +73,7 @@ public class DashboardView extends View {
 
         paintBg = new Paint();
         paintBg.setAntiAlias(true);
-        paintBg.setColor(getResources().getColor(R.color.color_dark));
+        paintBg.setColor(getResources().getColor(R.color.color_dark1));
 
         mRectFArc = new RectF();
         mRectFInnerArc = new RectF();
