@@ -22,10 +22,10 @@ open class BaseRecycleAdapter<T>( val layoutId: Int,val list: List<T>) : Recycle
     //onBindViewHolder给缓存控件设置数据
     override fun onBindViewHolder(holder: BaseHolder, position: Int) {
         val item = list.get(position)
-        convert(holder, item)
+        convert(holder, item,position)
     }
 
-    protected open fun convert(holder: BaseHolder, item: T) {
+    protected open fun convert(holder: BaseHolder, item: T,int: Int) {
         //什么都没有做
     }
 

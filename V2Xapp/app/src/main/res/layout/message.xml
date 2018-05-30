@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.intelligent.v2xapp.activity.AboutActivity">
+>
 
     <Button
         android:id="@+id/message_btn"
@@ -12,7 +12,7 @@
         android:layout_centerInParent="true"
         android:background="@drawable/background"
         android:drawableTop="@drawable/message"
-        android:text="消息"
+        android:text="@string/btn3"
         android:textColor="@drawable/main_text_bg"
 
         android:textSize="@dimen/dimens20" />

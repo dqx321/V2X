@@ -11,7 +11,7 @@ import com.intelligent.v2xapp.util.DataUtil
  * 我们可选择@Override 覆盖|重写
  */
 class MessageAdapter(list: List<MessageDb>) : BaseRecycleAdapter<MessageDb>(R.layout.message_adapter, list) {
-     override fun convert(holder: BaseHolder, item: MessageDb) {
+     override fun convert(holder: BaseHolder, item: MessageDb,int: Int) {
         holder.setText(R.id.message_text, "时间："+DataUtil.getTimeFromMillisecond(item.time)+"\n警告类型："+item.type+"   警告描述："+item.describ)
     }
 }

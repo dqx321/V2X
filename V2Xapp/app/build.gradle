@@ -8,7 +8,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.intelligent.v2xapp"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -20,7 +20,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    buildToolsVersion '26.0.2'
 }
 
 dependencies {
@@ -48,9 +48,6 @@ dependencies {
     implementation files('libs/pinyin4android1.0.jar')
     compile 'org.litepal.android:core:1.4.1'
     implementation files('libs/BaiduLBS_Android.jar')
-
-//    compile 'com.androidkun:pulltorefreshrecyclerview:1.0.9'
-
-
+    compile 'com.androidkun:pulltorefreshrecyclerview:1.0.9'
     compile 'com.belerweb:pinyin4j:2.5.0'
 }

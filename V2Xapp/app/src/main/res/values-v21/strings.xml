@@ -19,10 +19,11 @@
     <string name="pref_key_iat_show">iat_show</string>
     <string name="progress">--拼命加载中--</string>
     <string name="refrush">刷新</string>
-    <string name="pref_title_iat_show">显示听写界面</string>
     <string name="btn1">设置</string>
     <string name="btn2">警告</string>
     <string name="btn3">消息</string>
+    <string name="pref_title_iat_show">显示听写界面</string>
+
     <string name="pref_key_translate">translate</string>
     <string name="pref_title_translate">翻译</string>
 

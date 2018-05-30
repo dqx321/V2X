@@ -16,6 +16,7 @@ public class HXPreferenceUtils {
 
     private String isInter = "isInter";
     private String isFirst = "isFirst";
+    private String isfirstSetWarn = "isfirstSetWarn";
     private String account = "account";
     private String password = "password";
     private String total = "total";
@@ -31,7 +32,15 @@ public class HXPreferenceUtils {
     public void setudpiport(String port) {
         editor.putString(udpiport, port);
         editor.commit();
-    } public String getaccount() {
+    } public boolean getIsfirstSetWarn() {
+        return mSharedPreferences.getBoolean(isfirstSetWarn, true);
+    }
+
+    public void setIsfirstSetWarn(boolean isfirstSet) {
+        editor.putBoolean(isfirstSetWarn, isfirstSet);
+        editor.commit();
+    }
+    public String getaccount() {
         return mSharedPreferences.getString(account, "");
     }
 

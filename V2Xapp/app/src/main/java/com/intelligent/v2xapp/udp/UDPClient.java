@@ -20,7 +20,6 @@ public class UDPClient extends Thread{
     }
     @Override
     public void run() {
-        // TODO Auto-generated method stub
         int TIMEOUT = 3000;
         int servPort = 8800;
         byte[] bytesToSend = m_text.getBytes();//"test_client".getBytes();

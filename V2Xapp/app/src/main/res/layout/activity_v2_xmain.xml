@@ -115,7 +115,7 @@
             android:layout_gravity="center"
             android:background="@color/color_black"
             android:gravity="center"
-            android:text="11"
+            android:text=""
             android:textColor="@color/chartreuse"
             android:textSize="@dimen/dimens22" />
 

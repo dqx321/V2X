@@ -4,10 +4,10 @@
     <!--<version>是数据库的版本号-->
     <!--<list>是数据库的映射模型（数据库表）-->
     <!--<mapping>是数据库的映射模型的地址（数据库表结构）-->
-    <dbname value="Intelligentsqlit" ></dbname>
-    <version value="2" ></version>
+    <dbname value="Intelligentsqlit"></dbname>
+    <version value="3"></version>
     <list>
         <mapping class="com.intelligent.v2xapp.activity.message.MessageDb"></mapping>
+        <mapping class="com.intelligent.v2xapp.activity.warning.LitPalWarnBean"></mapping>
     </list>
-
 </litepal>

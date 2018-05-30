@@ -9,11 +9,11 @@
 
     <include layout="@layout/top_layout"></include>
 
-    <!--<com.androidkun.PullToRefreshRecyclerView-->
-        <!--android:id="@+id/message_recycle"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
+    <com.androidkun.PullToRefreshRecyclerView
+        android:id="@+id/message_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <!--</com.androidkun.PullToRefreshRecyclerView>-->
+    </com.androidkun.PullToRefreshRecyclerView>
 
 </LinearLayout>

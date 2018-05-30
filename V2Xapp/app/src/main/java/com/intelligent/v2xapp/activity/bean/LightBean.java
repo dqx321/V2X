@@ -12,6 +12,15 @@ public class LightBean implements Serializable{
     public LightBean() {
     }
 
+    @Override
+    public String toString() {
+        return "LightBean{" +
+                "carid='" + carid + '\'' +
+                ", style='" + style + '\'' +
+                ", time='" + time + '\'' +
+                '}';
+    }
+
     public String getCarid() {
         return carid;
     }

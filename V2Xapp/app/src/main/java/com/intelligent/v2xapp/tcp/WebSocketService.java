@@ -50,7 +50,7 @@ public class WebSocketService extends Service {
         return super.onStartCommand(intent, flags, startId);
     }
 
-//使用  startService(new Intent(MainActivity.this, WebSocketService.class));
+//使用  startService(new Intent(NewViewActivity.this, WebSocketService.class));
     private void javawebsocket() {
         ExecutorUtil.execute(new Runnable() {
             @Override

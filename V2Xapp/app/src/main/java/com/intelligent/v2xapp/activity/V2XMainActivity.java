@@ -4,7 +4,10 @@ import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -40,8 +43,10 @@ import com.intelligent.v2xapp.activity.bean.WarnBean;
 import com.intelligent.v2xapp.activity.bean.WarningBean;
 import com.intelligent.v2xapp.activity.message.MessageActivity;
 import com.intelligent.v2xapp.activity.message.MessageDb;
+import com.intelligent.v2xapp.activity.newview.NewViewActivity;
 import com.intelligent.v2xapp.activity.offline.OfflineMapActivity;
 import com.intelligent.v2xapp.activity.offline.SettingActivity;
+import com.intelligent.v2xapp.activity.warning.LitPalWarnBean;
 import com.intelligent.v2xapp.activity.warning.WarnSettingActivity;
 import com.intelligent.v2xapp.review.DashboardView;
 import com.intelligent.v2xapp.udp.UdpSocket;
@@ -53,6 +58,8 @@ import com.vise.common_utils.log.LogUtils;
 
 import org.litepal.crud.DataSupport;
 
+import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -89,7 +96,6 @@ public class V2XMainActivity extends BaseActivity {
                     break;
                 case 10:
                     String msg = msg1.obj.toString();
-
                     if (msg.substring(0, 2).equals("01") && msg.length() >= 20) {
                         MainBean bean;
                         String carId = DataUtil.getInter(msg.substring(2, 10)) + "";
@@ -160,10 +166,15 @@ public class V2XMainActivity extends BaseActivity {
                 openActivityNoIntent(SettingActivity.class);
                 break;
             case R.id.message_btn:
-//                openActivityNoIntent(MessageActivity.class);
+                openActivityNoIntent(MessageActivity.class);
 
                 break;
             case R.id.warning_btn:
+//                if (mediaPlayer == null) {
+//                    //创建播放实例
+//                    mediaPlayer = MediaPlayer.create(V2XMainActivity.this, R.raw.warning0);
+//                }
+                openActivityNoIntent(NewViewActivity.class);
 //                openActivityNoIntent(WarnSettingActivity.class);
                 break;
         }
@@ -182,7 +193,7 @@ public class V2XMainActivity extends BaseActivity {
 
     private void setMainbean(MainBean bean) {
 //        if (bean.getSpeed().equals("")) {
-            dashboardView.setVelocity(Integer.parseInt(bean.getSpeed()));
+        dashboardView.setVelocity(Integer.parseInt(bean.getSpeed()));
 //        }
         Random rand = new Random();
 //        LatLng point = new LatLng(rand.nextInt(5), rand.nextInt(5));
@@ -317,9 +328,9 @@ public class V2XMainActivity extends BaseActivity {
         preferenceUtils = new HXPreferenceUtils(this);
         adapter = new WarningAdapter(this, list);
         listview.setAdapter(adapter);
-        initUdp("192.168.3.214", "data");
-        initUdp1("192.168.3.214", "event");
-        initUdp2("192.168.3.214", "tf_lights");
+        initUdp(Final.Other_IP, "data");
+        initUdp1(Final.Other_IP, "event");
+        initUdp2(Final.Other_IP, "tf_lights");
         initTimer();
 
     }
@@ -342,9 +353,12 @@ public class V2XMainActivity extends BaseActivity {
     private void initwarn() {
         if (mediaPlayer == null) {
             //创建播放实例
-            mediaPlayer = MediaPlayer.create(V2XMainActivity.this, R.raw.warning0);
+            mediaPlayer = new MediaPlayer();
+//            mediaPlayer = MediaPlayer.create(V2XMainActivity.this, R.raw.warning0);
         }
-        for (int i = 0; i < (Final.NUMBER + 1); i++) {
+//        List<LitPalWarnBean> litPalWarnBeans = DataSupport.findAll(LitPalWarnBean.class);
+
+        for (int i = 0; i < Final.NUMBER; i++) {
             list.add(new WarnBean(i + "", 0));
         }
     }
@@ -353,6 +367,16 @@ public class V2XMainActivity extends BaseActivity {
     BaiduMap mBaiduMap;
 
     public void initData() {
+//        HXPreferenceUtils hxPreferenceUtils = HXPreferenceUtils.getInstance();
+//        if (hxPreferenceUtils.getIsfirstSetWarn()) {
+//            hxPreferenceUtils.setIsfirstSetWarn(false);
+//            for (int i = 0; i < Final.NUMBER; i++) {
+//                LitPalWarnBean litPalWarnBean = new LitPalWarnBean();
+//                litPalWarnBean.setShown(true);
+//                litPalWarnBean.setWarnType(i);
+//                litPalWarnBean.save();
+//            }
+//        }
         animation_show = AnimationUtils.loadAnimation(this, R.anim.light_show);
         animation_gone = AnimationUtils.loadAnimation(this, R.anim.light_gone);
         animation_gone.setAnimationListener(new Animation.AnimationListener() {
@@ -386,7 +410,7 @@ public class V2XMainActivity extends BaseActivity {
         mapview1.showScaleControl(false);
 // 隐藏缩放控件
         mapview1.showZoomControls(false);
-       
+
     }
 
     private void initUdp(final String ip, final String message) {
@@ -473,7 +497,6 @@ public class V2XMainActivity extends BaseActivity {
         time1 = System.currentTimeMillis();
     }
 
-
     private void setWarningBean(WarningBean warningBean) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getWarnid().equals(warningBean.getWarningtype())) {
@@ -481,9 +504,33 @@ public class V2XMainActivity extends BaseActivity {
                 list.get(i).setDescribe(warningBean.getDescribe());
             }
         }
+        LogUtils.e(warningBean.getWarningtype());
         if (!warningBean.getWarningtype().equals("0")) {
             if (!mediaPlayer.isPlaying()) {
-                mediaPlayer.start();
+            // 切歌之前先重置，释放掉之前的资源
+                mediaPlayer.reset();
+                try {
+                    Uri uri;
+                    switch (warningBean.getWarningtype()) {
+                        case "1":
+                            uri= Uri.parse("android.resource://" + getPackageName() + "/" +R.raw.warn0);
+                            break;
+                        case "5":
+                            uri= Uri.parse("android.resource://" + getPackageName() + "/" +R.raw.warn3);
+                            break;
+                        case "6":
+                            uri= Uri.parse("android.resource://" + getPackageName() + "/" +R.raw.warn4);
+                            break;
+                        default:
+                            uri= Uri.parse("android.resource://" + getPackageName() + "/" +R.raw.warn2);
+                            break;
+                    }
+                    mediaPlayer.setDataSource(this,uri);
+                    mediaPlayer.prepare();
+                    mediaPlayer.start();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
             MessageDb historyMessageDb = DataSupport.findLast(MessageDb.class);
             if (historyMessageDb == null) {

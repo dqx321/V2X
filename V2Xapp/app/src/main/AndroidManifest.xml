@@ -50,8 +50,10 @@
         <activity android:name=".activity.message.MessageActivity" />
         <activity
             android:name=".activity.offline.SettingActivity"
-            android:launchMode="singleInstance" />
-        <activity android:name=".activity.warning.WarnSettingActivity"></activity>
+            android:launchMode="singleInstance"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".activity.warning.WarnSettingActivity" />
+        <activity android:name=".activity.newview.NewViewActivity"></activity>
     </application>
 
 </manifest>

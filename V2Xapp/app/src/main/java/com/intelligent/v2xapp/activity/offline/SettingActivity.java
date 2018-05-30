@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.intelligent.v2xapp.Final;
 import com.intelligent.v2xapp.R;
 import com.intelligent.v2xapp.activity.V2XMainActivity;
 import com.intelligent.v2xapp.activity.base.BaseActivity;
@@ -90,14 +91,14 @@ public class SettingActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.text_red:
                 if (editRed.getText() != null && editRed.getText().length() > 0) {
-                    sendUdp("192.168.3.214", "r" + editRed.getText().toString(), 8891);
+                    sendUdp(Final.Other_IP, "r" + editRed.getText().toString(), 8891);
                 } else {
                     ToastUtil.showShortToast(this, "请输入时间");
                 }
                 break;
             case R.id.text_green:
                 if (editGreen.getText() != null && editRed.getText().length() > 0) {
-                    sendUdp("192.168.3.214", "g" + editGreen.getText().toString(), 8891);
+                    sendUdp(Final.Other_IP, "g" + editGreen.getText().toString(), 8891);
                 } else {
                     ToastUtil.showShortToast(this, "请输入时间");
                 }
